@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  resources :articles # => index, show, new, create, edit, update, destroy
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # '/' => index des articles
+  root to: 'articles#index'
+
+  resources :articles, except: %i[index] # => index, show, new, create, edit, update, destroy
 end
